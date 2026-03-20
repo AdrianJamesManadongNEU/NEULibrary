@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>NEU Library Visitor System</title>
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+
+<body>
+
+<div class="container">
+
+  <div class="login-card">
+
+    <div class="header">
+      <img src="logo.png" class="logo" alt="NEU Logo">
+      <h2>New Era University</h2>
+      <p>Library Visitor Management</p>
+    </div>
+
+    <div class="tabs">
+      <button class="tab active" onclick="showLogin()">Login</button>
+      <button class="tab" onclick="showRegister()">Register</button>
+      <button class="tab" onclick="showAdmin()">Admin</button>
+    </div>
+
+    <div class="forms">
+
+      <form id="login" class="form active" onsubmit="loginUser(event)">
+        <input type="email" placeholder="Institutional Email" required>
+        <div class="password-field">
+  <input type="password" placeholder="Password" required>
+  <i class="fa-solid fa-eye-slash toggle-password" onclick="togglePassword(this)"></i>
+</div>
+        <button class="btn">Sign In</button>
+      </form>
+
+
+      <form id="register" class="form" onsubmit="registerUser(event)">
+        <input type="text" placeholder="Full Name" required>
+        <input type="email" placeholder="Institutional Email" required>
+<small class="email-warning">Use your institutional email</small>
+
+    
+        <label for="userType">Register As</label>
+        <select id="userType" onchange="changeUserType()" required>
+          <option value="" disabled selected>Select user type</option>
+          <option value="student">Student</option>
+          <option value="faculty">Faculty</option>
+        </select>
+
+        <div id="studentProgramGroup" style="display:none;">
+          <label for="regProgram">Program College</label>
+          <select id="regProgram" name="program" required>
+            <option value="" disabled selected>Select your program...</option>
+
+            <optgroup label="Graduate & Special Programs">
+              <option>School of Graduate Studies</option>
+              <option>College of Law</option>
+              <option>College of Medicine</option>
+              <option>Expanded Tertiary Education Equivalency & Accreditation Program (ETEEAP)</option>
+              <option>Alternative Learning System</option>
+              <option>School of International Relations</option>
+            </optgroup>
+
+            <optgroup label="Undergraduate Colleges">
+              <option>College of Accountancy</option>
+              <option>College of Agriculture</option>
+              <option>College of Arts and Science</option>
+              <option>College of Business Administration</option>
+              <option>College of Communication</option>
+              <option>College of Informatics and Computing Studies</option>
+              <option>College of Criminology</option>
+              <option>College of Education</option>
+              <option>College of Engineering and Architecture</option>
+              <option>College of Medical Technology</option>
+              <option>College of Midwifery</option>
+              <option>College of Music</option>
+              <option>College of Nursing</option>
+              <option>College of Physical Therapy</option>
+              <option>College of Respiratory Therapy</option>
+            </optgroup>
+
+            <optgroup label="Basic Education">
+              <option>Integrated School</option>
+            </optgroup>
+          </select>
+        </div>
+
+        <div id="facultyDepartmentGroup" style="display:none;">
+          <label for="regProgramFaculty">Faculty Department</label>
+          <select id="regProgramFaculty" required>
+            <option value="" disabled selected>Select your department...</option>
+            <option>College of Accountancy Faculty</option>
+            <option>College of Agriculture Faculty</option>
+            <option>College of Arts and Science Faculty</option>
+            <option>College of Business Administration Faculty</option>
+            <option>College of Communication Faculty</option>
+            <option>College of Informatics and Computing Studies Faculty</option>
+            <option>College of Criminology Faculty</option>
+            <option>College of Education Faculty</option>
+            <option>College of Engineering and Architecture Faculty</option>
+            <option>College of Medical Technology Faculty</option>
+            <option>College of Midwifery Faculty</option>
+            <option>College of Music Faculty</option>
+            <option>College of Nursing Faculty</option>
+            <option>College of Physical Therapy Faculty</option>
+            <option>College of Respiratory Therapy Faculty</option>
+            <option>School of International Relations Faculty</option>
+          </select>
+        </div>
+
+       <div class="password-field">
+  <input type="password" placeholder="Create Password" required>
+  <i class="fa-solid fa-eye-slash toggle-password" onclick="togglePassword(this)"></i>
+</div>
+
+        <button class="btn">Register</button>
+      </form>
+
+
+<form id="admin" class="form" onsubmit="adminLogin(event)">
+
+  <input type="email" placeholder="Admin Email" required>
+ <div class="password-field">
+  <input type="password" placeholder="Admin Password" required>
+  <i class="fa-solid fa-eye-slash toggle-password" onclick="togglePassword(this)"></i>
+</div>
+
+  <button class="btn">Admin Login</button>
+
+</form>
+
+    </div>
+
+    <div id="visitPopup" class="popup">
+
+      <div class="popup-card">
+
+        <h2>Library Visit</h2>
+        <p>Please select your reason for visiting the library.</p>
+
+        <form id="visitForm" onsubmit="submitVisit(event)">
+
+          <label>Reason for Visit</label>
+          <select id="reason" required>
+            <option value="" disabled selected>Select reason</option>
+            <option>Study / Review</option>
+            <option>Borrow Books</option>
+            <option>Return Books</option>
+            <option>Research</option>
+            <option>Use Computers</option>
+            <option>Group Study</option>
+          </select>
+
+          <label>Additional Notes</label>
+          <textarea id="notes" placeholder="Optional notes..."></textarea>
+
+          <button class="btn">Submit Visit</button>
+
+        </form>
+
+      </div>
+
+    </div>
+
+    <div id="welcomeAlert" class="alert-box">
+      <p>Welcome to NEU Library App!</p>
+      <button onclick="closeAlert()">OK</button>
+    </div>
+
+    <div class="footer">
+      © 2026 New Era University Library
+    </div>
+
+  </div>
+
+</div>
+
+<script type="module" src="script.js"></script>
+
+</body>
+</html>

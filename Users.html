@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Users - NEU Library</title>
+<link rel="stylesheet" href="Admin_Dashboard.css">
+</head>
+<style>
+.status {
+  padding: 5px 10px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: bold;
+  display: inline-block;
+  text-align: center;
+  min-width: 80px;
+}
+
+.status.in {
+  background: #c8f7c5; 
+  color: #2e7d32;     
+}
+
+
+.status.out {
+  background: #ffcdd2; 
+  color: #c62828;      
+}
+
+.status.inactive {
+  background: #e0e0e0; 
+  color: #555;         
+}
+
+
+.status:hover {
+  opacity: 0.9;
+  transition: 0.2s;
+}
+</style>
+<body>
+<div class="dashboard">
+<aside class="sidebar">
+<h1>📚 NEU Library</h1>
+<nav>
+<ul>
+<li><a href="Admin_dashboard.html">Dashboard</a></li>
+<li class="active"><a href="users.html">Users</a></li>
+<li><a href="logs.html">Logs</a></li>
+<li><a href="chart.html">Stats</a></li>
+<li><a href="settings.html">Settings</a></li>
+</ul>
+</nav>
+</aside>
+
+<main class="main-content">
+
+<header class="topbar">
+<h2>Registered Users</h2>
+<div class="user-info">
+<span>Admin</span>
+</div>
+</header>
+
+<div class="content">
+
+<div class="controls">
+<input
+type="search"
+id="search"
+placeholder="Search users..."
+onkeyup="searchUser()"
+/>
+</div>
+
+<section class="table-section">
+
+<h2>User List</h2>
+
+<div class="table-wrapper">
+
+<table>
+
+<thead>
+<tr>
+<th>Name</th>
+<th>Email</th>
+<th>User Type</th>
+<th>Status</th>
+<th>Action</th>
+</tr>
+</thead>
+
+<tbody id="usersTable">
+<tr>
+<td colspan="5">Loading users...</td>
+</tr>
+</tbody>
+
+</table>
+
+</div>
+
+</section>
+
+</div>
+</main>
+</div>
+
+<script type="module" src="Users.js"></script>
+</body>
+</html>

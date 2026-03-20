@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Library Admin Dashboard</title>
+  <link rel="stylesheet" href="Admin_Dashboard.css">
+</head>
+<body>
+
+  <div class="dashboard">
+
+    <aside class="sidebar">
+      <h1>📚 NEU Library</h1>
+      <nav>
+      <ul>
+  <li class="active"><a href="Admin_dashboard.html">Dashboard</a></li>
+  <li><a href="Users.html">Users</a></li>
+  <li><a href="logs.html">Logs</a></li>
+  <li><a href="chart.html">Stats</a></li>
+  <li><a href="settings.html">Settings</a></li>
+</ul>
+      </nav>
+    </aside>
+
+    <main class="main-content">
+
+      <header class="topbar">
+        <h2>Admin Dashboard</h2>
+        <div class="user-info">
+          <span id="adminName">Admin</span>
+        </div>
+      </header>
+
+      <div class="content">
+
+       <div class="stats-grid">
+
+  <div class="stat-card users">
+    <div class="stat-info">
+      <h3>Registered Users</h3>
+      <p id="users">0</p>
+    </div>
+    <div class="stat-icon">👤</div>
+  </div>
+
+  <div class="stat-card today">
+    <div class="stat-info">
+      <h3>Visitors Today</h3>
+      <p id="today">0</p>
+    </div>
+    <div class="stat-icon">📅</div>
+  </div>
+
+  <div class="stat-card week">
+    <div class="stat-info">
+      <h3>This Week</h3>
+      <p id="week">0</p>
+    </div>
+    <div class="stat-icon">📊</div>
+  </div>
+
+  <div class="stat-card month">
+    <div class="stat-info">
+      <h3>This Month</h3>
+      <p id="month">0</p>
+    </div>
+    <div class="stat-icon">📈</div>
+  </div>
+
+  
+
+</div>
+        <div class="controls">
+          <input
+            type="search"
+            id="search"
+            placeholder="Search visitor or user..."
+            aria-label="Search visitors"
+            onkeyup="searchUser()"
+          />
+
+          <div class="filter-group">
+            <button class="filter-btn active" onclick="filterLogs('all')">All</button>
+            <button class="filter-btn" onclick="filterLogs('day')">Today</button>
+            <button class="filter-btn" onclick="filterLogs('week')">This Week</button>
+            <button class="filter-btn" onclick="filterLogs('month')">This Month</button>
+          </div>
+        </div>
+
+        <section class="table-section">
+          <h2>Visitor Logs</h2>
+          <div class="table-wrapper">
+            <table>
+          <thead>
+  <tr>
+    <th>Name</th>
+    <th>Email</th>
+    <th>Reason</th>
+    <th>Time In</th>
+    <th>Status</th> 
+
+  </tr>
+</thead>
+<tbody id="logsTable"></tbody>
+            </table>
+          </div>
+        </section>
+
+      
+        <section class="table-section">
+          <h2>Registered Users</h2>
+          <div class="table-wrapper">
+            <table>
+              <thead>
+                <tr>
+                  <th>Name</th>
+                  <th>Email</th>
+                  <th>User Type</th>
+                  <th>Status</th>
+                  <th>Action</th>
+                </tr>
+              </thead>
+              <tbody id="usersTable"></tbody>
+            </table>
+          </div>
+        </section>
+
+      </div>
+    </main>
+  </div>
+
+  <div id="customAlert" class="custom-alert"></div>
+  
+  <script type="module" src="Admin_dashboard.js"></script>
+</body>
+</html>

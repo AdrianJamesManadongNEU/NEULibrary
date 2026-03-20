@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>NEU Library Statistics</title>
+<link rel="stylesheet" href="chart.css">
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+<script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+</head>
+<body>
+
+<div class="dashboard">
+<aside class="sidebar">
+<h1>📚 Library</h1>
+
+<nav>
+<ul>
+<li><a href="Admin_dashboard.html">Dashboard</a></li>
+<li><a href="users.html">Users</a></li>
+<li><a href="logs.html">Logs</a></li>
+<li class="active"><a href="chart.html">Stats</a></li>
+<li><a href="settings.html">Settings</a></li>
+</ul>
+</nav>
+
+</aside>
+
+
+<main class="main-content">
+
+<header class="topbar">
+<h2>Library Statistics</h2>
+</header>
+
+<div class="content">
+
+<h3>Library Statistics</h3>
+
+<div class="stats-controls">
+ <button class="stats-filter active" onclick="filterStats('all', event)">All</button>
+<button class="stats-filter" onclick="filterStats('day', event)">Today</button>
+<button class="stats-filter" onclick="filterStats('week', event)">This Week</button>
+<button class="stats-filter" onclick="filterStats('month', event)">This Month</button>
+</div>
+
+<div class="calendar-container">
+  <div id="calendar"></div>
+</div>
+
+<div class="export-controls">
+  <button onclick="printStats()">🖨️ Print</button>
+  <button onclick="exportCSV()">📥 Export CSV</button>
+</div>
+
+<div class="stats-grid">
+
+</div>
+
+<div class="stat-card total">
+<div class="card-icon">📚</div>
+<div class="card-info">
+<h4>Total Visitors</h4>
+<p id="totalVisitors">0</p>
+</div>
+</div>
+
+
+<div class="stat-card students">
+<div class="card-icon">🎓</div>
+<div class="card-info">
+<h4>Students</h4>
+<p id="studentCount">0</p>
+</div>
+</div>
+
+<div class="stat-card faculty">
+<div class="card-icon">👨‍🏫</div>
+<div class="card-info">
+<h4>Faculty</h4>
+<p id="facultyCount">0</p>
+</div>
+</div>
+
+<div class="stat-card today">
+<div class="card-icon">📅</div>
+<div class="card-info">
+<h4>Today's Visitors</h4>
+<p id="todayVisitors">0</p>
+</div>
+</div>
+
+<div class="stat-card reason">
+  <div class="card-icon">📝</div>
+  <div class="card-info">
+    <h4>Reason of Visit</h4>
+    <ul id="reasonStats">
+    </ul>
+  </div>
+</div>
+
+<div class="stat-card program">
+  <div class="card-icon">🏫</div>
+  <div class="card-info">
+    <h4>Colleges Summary</h4>
+    <ul id="programStats"></ul>
+  </div>
+</div>
+
+</div>
+
+</div>
+
+</main>
+
+</div>
+
+<script type="module" src="chart.js"></script>
+</body>
+</html>

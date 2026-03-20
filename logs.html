@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Visitor Logs</title>
+<link rel="stylesheet" href="Admin_Dashboard.css">
+
+<style>
+.status {
+  padding: 5px 10px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: bold;
+}
+
+.status.in {
+  background: #c8f7c5;
+  color: #2e7d32;
+}
+
+.status.out {
+  background: #ffcdd2;
+  color: #c62828;
+}
+
+.status.inactive {
+  background: #e0e0e0;
+  color: #555;
+}
+
+.action-btn.logout {
+  background: #ff9800;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+</style>
+
+</head>
+
+<body>
+
+<div class="dashboard">
+
+<aside class="sidebar">
+  <h1>📚 NEU Library</h1>
+  <nav>
+    <ul>
+      <li><a href="Admin_dashboard.html">Dashboard</a></li>
+      <li><a href="users.html">Users</a></li>
+      <li class="active"><a href="logs.html">Logs</a></li>
+      <li><a href="chart.html">Stats</a></li>
+      <li><a href="settings.html">Settings</a></li>
+    </ul>
+  </nav>
+</aside>
+
+<main class="main-content">
+
+<header class="topbar">
+  <h2>Visitor Logs</h2>
+</header>
+
+<div class="content">
+
+<input type="search" id="search" placeholder="Search..." onkeyup="searchLogs()">
+<div class="table-wrapper">
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Email</th>
+      <th>Reason</th>
+      <th>Time In</th>
+       <th>Time Out</th>
+      <th>Status</th>
+    </tr>
+  </thead>
+  <tbody id="logsTable"></tbody>
+</table>
+</div>
+
+</div>
+</main>
+</div>
+
+<script type="module" src="logs.js"></script>
+
+</body>
+</html>

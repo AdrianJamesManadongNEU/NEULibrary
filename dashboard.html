@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Library Dashboard</title>
+<link rel="stylesheet" href="dashboard.css">
+</head>
+
+<body>
+
+<div class="dashboard">
+
+  <div class="sidebar">
+    <h2>NEU Library</h2>
+
+    <ul>
+      <li class="active">Dashboard</li>
+     <li onclick="handleLogout()">Logout</li>
+    </ul>
+  </div>
+
+  <div class="main">
+
+
+    <div class="topbar">
+      <h3>Library Dashboard</h3>
+      <span>Welcome, <span id="userTop">User</span></span>
+    </div>
+
+
+    <div class="fun-banner">
+      🎉 Welcome to NEU Library App 📚
+    </div>
+
+
+    <div class="welcome-container">
+
+      <div class="welcome-card">
+
+        <div class="welcome-header">
+          <h2>📚 NEU Library</h2>
+          <p>Library Dashboard</p>
+        </div>
+
+        <div class="avatar">
+          <span id="avatarLetter">U</span>
+        </div>
+
+        <h3 class="welcome-title">Welcome Back</h3>
+
+        <p class="welcome-name">
+          Hello, <strong id="userName">User</strong> 👋
+        </p>
+
+
+        <div class="date-time">
+          <div class="date-box">
+            <p id="currentDate">Loading date...</p>
+          </div>
+
+          <div class="time-box">
+            <p id="currentTime">00:00</p>
+          </div>
+        </div>
+
+        <p class="welcome-text">
+          Access your library visit history, manage your profile,
+          and enjoy the services of the NEU Library system.
+        </p>
+
+      </div>
+
+    </div>
+
+
+    <div class="quote-box">
+      <p id="quoteText">"A reader lives a thousand lives before he dies."</p>
+    </div>
+
+  </div>
+
+</div>
+
+<script>
+function logout(){
+  window.location.href="index.html";
+}
+
+
+const quotes = [
+  "A reader lives a thousand lives before he dies.",
+  "Knowledge is power. 📚",
+  "Today a reader, tomorrow a leader.",
+  "The library is the heart of the school.",
+  "Read more, learn more, grow more."
+];
+
+document.getElementById("quoteText").innerText =
+  quotes[Math.floor(Math.random() * quotes.length)];
+</script>
+
+<script type="module" src="dashboard.js"></script>
+
+</body>
+</html>
