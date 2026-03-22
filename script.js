@@ -250,7 +250,7 @@ return;
 showAlert("Welcome Admin!", "success");
 
 setTimeout(()=>{
-  window.location.href = "Admin_Dashboard.html";
+  window.location.href = "admin-dashboard.html";
 },1000);
 
 }
